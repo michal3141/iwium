@@ -8,3 +8,4 @@ Edit robocode.bat file in C:\robocode (please note that required jar files needs
 
     java -Xmx512M -DNOSECURITY=true -cp libs/robocode.jar;libs/jsr94-1.1.jar;libs/jruleenginesrc.jar;libs/jrules.jar robocode.Robocode %*
 
+Niezbędne jary w katalogu `lib` repozytorium.
