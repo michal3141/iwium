@@ -1,0 +1,25 @@
+
+  <rule-execution-set> 
+   <name>RuleExecutionSet1</name> 
+   <description>Rule Execution Set</description> 
+
+   <synonymn name="robot" class="myrobots.MichalFirstRobot" /> 
+   <synonymn name="turn" class="myrobots.Turn" />
+   <!--  
+   --> 
+   <rule name="run" description="run rule" >
+   	<if leftTerm="robot.getRobotState" op="=" rightTerm="run" />
+   	<then method="robot.ahead" arg1="100" />
+   	<then method="robot.turnGunRight" arg1="360" />
+   	<then method="robot.back" arg1="100" />
+   	<then method="robot.turnGunRight" arg1="360" />
+   </rule>
+   <rule name="onScannedRobot" description="onScannedRobot rule" > 
+   	<if leftTerm="robot.getRobotState" op="=" rightTerm="onScannedRobot" />  
+   	<then method="robot.fire" arg1="1" /> 
+   </rule> 
+   <rule name="onHitByBullet" description="onHitByBullet rule" >
+   	<if leftTerm="robot.getRobotState" op="=" rightTerm="onHitByBullet" />  
+   	<then method="robot.turnLeft" arg1="turn.getAngle" />    	
+   </rule>
+  </rule-execution-set> 
